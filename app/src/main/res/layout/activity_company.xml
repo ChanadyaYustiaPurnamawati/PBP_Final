@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
-    tools:context=".ProfileActivity">
+    tools:context=".ActivityCompany">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="283dp">
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -28,6 +30,17 @@
                 android:textSize="16pt" />
         </RelativeLayout>
 
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="170dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            app:backgroundTint="@color/pink"
+            android:text="Edit" />
+
+
+
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="430px"
@@ -35,12 +48,13 @@
             android:orientation="vertical"
             android:gravity="center"
             android:layout_marginLeft="50dp">
+
             <ImageView
                 android:id="@+id/image_view"
-                android:layout_width="150dp"
-                android:scaleType="centerCrop"
-                android:layout_height="150dp"
-                android:background="@drawable/buildingcompany"/>
+                android:layout_width="114dp"
+                android:layout_height="131dp"
+                android:background="@drawable/buildingcompany"
+                android:scaleType="centerCrop" />
 
         </LinearLayout>
 
