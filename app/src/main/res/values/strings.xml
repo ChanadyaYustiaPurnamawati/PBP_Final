@@ -62,6 +62,8 @@
     <string name="location">Location</string>
     <string name="order">Order</string>
     <string name="motor_home">Motor</string>
+    <string name="usersprofile">User Profile</string>
+    <string name="logout">Logout</string>
     <!--    Sidebar -->
     <string name="profile">Profile</string>
     <string name="sign_out">Sign Out</string>
