@@ -69,4 +69,8 @@
     <string name="sign_out">Sign Out</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- MAPBOX -->
+    <string name="mapbox_access_token">pk.eyJ1IjoiY2hhbmFkeWEiLCJhIjoiY2tmbnI3ODh0MDdqZzJybzB3M2o1N2M1YiJ9.VYfIJUREJy5JsB6EpR1AqA</string>
+
 </resources>

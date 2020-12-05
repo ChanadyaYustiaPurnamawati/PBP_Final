@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "799934895284",
+    "project_id": "uaspbpfinalea",
+    "storage_bucket": "uaspbpfinalea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799934895284:android:e3bd02327a87dfa12233e1",
+        "android_client_info": {
+          "package_name": "com.chanadyayustiapurnamawati.pbp_uas_final_e"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799934895284-iv3kmhregkv6561md6en8gccc1heibeh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBwPYILUa0yeq1LwMui_pAJPZQtvdP0iA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799934895284-iv3kmhregkv6561md6en8gccc1heibeh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
