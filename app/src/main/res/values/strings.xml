@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">PBP_UAS_E_KelA</string>
+    <string name="forgot_password">Forgot</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="hint_email">example@example.com</string>
+    <string name="hint_password">*******</string>
+    <string name="hint_nama">Spongebob Squarepants</string>
+    <string name="hint_notelp">081xxxxxxxxx</string>
+    <string name="hint_noktp">01xxxxxxxxxxxxxxxx</string>
+
+    <!--    Customer    -->
+    <string name="C_profil">Profil</string>
+    <string name="Hi_input">Hi!</string>
+    <string name="Hi_input2">Please Input Your Profil</string>
+    <string name="n_customer">Name</string>
+    <string name="a_customer">Address</string>
+    <string name="pn_customer">Phone Number</string>
+    <string name="citizen_customer">Citizen Number</string>
+    <string name="m_customer">Motorcycle</string>
+    <string name="d_customer">Day</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="C_update">Update</string>
+    <string name="p_customer">Phone</string>
+    <string name="c_customer">C.Numb</string>
+    <string name="m2_customer">Motor</string>
+    <string name="price_customer">Price</string>
+
+    <!--    main    -->
+    <string name="splash">Hoki Rental</string>
+
+    <!--    Motorcycle  -->
+    <string name="M_add">Add Motorcycle</string>
+    <string name="welcome">Welcome To HokiRental</string>
+    <string name="key">Your key to rent a motorcycle</string>
+    <string name="Matic">Matic</string>
+    <string name="Beat">- Beat</string>
+    <string name="Vario">- Vario</string>
+    <string name="Scoopy">- Scoopy</string>
+    <string name="Sport">Sport</string>
+    <string name="R25">- R25</string>
+    <string name="Verza">- Verza</string>
+    <string name="Vixion">- Vixion</string>
+    <string name="Trail">Trail</string>
+    <string name="T1">- DTracker</string>
+    <string name="T2">- KLX</string>
+    <string name="T3">- KTM</string>
+    <string name="Details">Details</string>
+    <string name="AddM">Add</string>
+    <string name="Motor">Motor</string>
+    <string name="Merk">Merk</string>
+    <string name="Jenis">Jenis</string>
+    <string name="Kondisi">Kondisi</string>
+    <string name="Tahun">Tahun</string>
+    <string name="Harga">Harga</string>
+    <string name="Foto">Foto</string>
+
+    <!--    Home/Dashboard  -->
+    <string name="company_profile">Company Profile</string>
+    <string name="location">Location</string>
+    <string name="order">Order</string>
+    <string name="motor_home">Motor</string>
+    <!--    Sidebar -->
+    <string name="profile">Profile</string>
+    <string name="sign_out">Sign Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

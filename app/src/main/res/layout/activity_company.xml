@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    tools:context=".ProfileActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="283dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170px"
+            android:background="@drawable/action_bar_style"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:text="Profil"
+                android:textColor="#fff"
+                android:textSize="16pt" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="430px"
+            android:layout_marginTop="220px"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="50dp">
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="150dp"
+                android:scaleType="centerCrop"
+                android:layout_height="150dp"
+                android:background="@drawable/buildingcompany"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="253dp"
+        android:background="@drawable/categories_box_style">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/profile_box_style">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/company"
+                    android:backgroundTint="#000"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="7.5dp"
+                    android:layout_marginLeft="75dp"
+                    android:text="Company    :     HokiRental"
+                    android:textColor="@color/white"
+                    android:textSize="8pt"
+                    android:gravity=""/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginTop="85dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/ic_calendar"
+                    android:backgroundTint="#000"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="7.5dp"
+                    android:layout_marginLeft="75dp"
+                    android:text="Built             :     September 20, 2020"
+                    android:textColor="@color/white"
+                    android:textSize="8pt"
+                    android:gravity=""/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginTop="170dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/ic_person"
+                    android:backgroundTint="#000"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="7.5dp"
+                    android:layout_marginLeft="75dp"
+                    android:text="Founder       :    Joseph Maria A.Y.W"
+                    android:textColor="@color/white"
+                    android:textSize="8pt"
+                    android:gravity=""/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginTop="255dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/location"
+                    android:backgroundTint="#000"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="7.5dp"
+                    android:layout_marginLeft="75dp"
+                    android:text="Address       :    Babarsari street,"
+                    android:textColor="@color/white"
+                    android:textSize="8pt"
+                    android:gravity=""/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="200dp"
+                    android:text="Yogyakarta, Indonesia"
+                    android:textColor="#fff"
+                    android:textSize="8pt"
+                    android:gravity=""/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
