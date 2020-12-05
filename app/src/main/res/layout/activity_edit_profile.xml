@@ -185,13 +185,13 @@
 
 
     <Button
-        android:id="@+id/changeProfile"
+        android:id="@+id/save"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="28dp"
-        android:text="Change Profile"
+        android:text="Save"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:background="@drawable/round_bg"
@@ -199,19 +199,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileCitizen" />
 
-    <Button
-        android:id="@+id/btnLogOut"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="28dp"
-        android:text="Logout"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:background="@drawable/round_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changeProfile" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,74 @@
 package com.chanadyayustiapurnamawati.pbp_uas_final_e;
 
-public class HomeActivity {
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
+import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.DetailCustomerFragment;
+import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.ReadCustomerFragment;
+import com.chanadyayustiapurnamawati.pbp_uas_final_e.Motor.ReadMotorFragment;
+
+
+public class HomeActivity extends AppCompatActivity {
+    CardView company, user, motor, customer, logOut, location;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+        company = findViewById(R.id.company);
+        user = findViewById(R.id.user);
+        motor = findViewById(R.id.motor);
+        location = findViewById(R.id.location);
+        customer = findViewById(R.id.order);
+        logOut = findViewById(R.id.logout);
+
+        company.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ActivityCompany.class));
+            }
+        });
+        customer.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),DetailCustomerFragment.class));
+            }
+        });
+
+        motor.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ReadMotorFragment.class));
+            }
+        });
+
+        user.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+            }
+        });
+
+        location.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),LocationActivity.class));
+            }
+        });
+
+        logOut.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),SignOutActivity.class));
+            }
+        });
+
+
+
+
+    }
 }

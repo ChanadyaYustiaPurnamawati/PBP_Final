@@ -3,6 +3,7 @@ package com.chanadyayustiapurnamawati.pbp_uas_final_e;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,7 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
     FirebaseFirestore store;
     TextView tvNama, tvEmail, tvNotelp, tvNoktp;
     String id;
-    Button changeP, logout;
+    Button changeP;
     ImageView imgP;
     StorageReference storageReference;
     @Override
@@ -72,6 +73,13 @@ public class ProfileActivity extends AppCompatActivity {
                 }else {
                     Log.d("tag", "onEvent: Document do not exists");
                 }
+            }
+        });
+
+        changeP.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),EditProfilActivity.class));
             }
         });
 

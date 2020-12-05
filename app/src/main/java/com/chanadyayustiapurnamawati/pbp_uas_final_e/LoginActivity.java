@@ -2,8 +2,14 @@ package com.chanadyayustiapurnamawati.pbp_uas_final_e;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,14 +22,20 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity {
+    private String CHANNEL_ID = "channel 2";
     FirebaseAuth auth;
     EditText etEmail, etPassword;
     Button login;
     TextView gotoRegister;
+    FirebaseUser newUser;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.btnLogin);
         gotoRegister = findViewById(R.id.btnGotoRegister);
         auth = FirebaseAuth.getInstance();
+        newUser = auth.getCurrentUser();
 
         login.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -51,11 +64,18 @@ public class LoginActivity extends AppCompatActivity {
                 auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "Logged in Successfully!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        boolean emailVerified = user.isEmailVerified();
+                        if(user != null && emailVerified == true){
+                            if(task.isSuccessful()){
+                                Toast.makeText(LoginActivity.this, "Logged in Successfully!", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                            }else{
+                                Toast.makeText(LoginActivity.this, "Login Error!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }else{
-                            Toast.makeText(LoginActivity.this, "Login Error!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(com.chanadyayustiapurnamawati.pbp_uas_final_e.LoginActivity.this, "Email wasn't verified!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                         }
                     }
                 });
@@ -69,6 +89,57 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            String CHANNEL_ID = "Channel 1";
+            CharSequence name = "Channel 1";
+            String description = "This is Channel 1";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
 
+        FirebaseMessaging.getInstance().subscribeToTopic("news")
+                .addOnCompleteListener(new OnCompleteListener<Void>(){
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task){
+                        String mag = "Welcome!!";
+                        if(!task.isSuccessful()){
+                            mag = "Failed";
+                        }
+                        Toast.makeText(LoginActivity.this, mag, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+    }
+
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Channel 2";
+            String description = "This Channel 2";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void addNotification(){
+        NotificationCompat.Builder builder = new NotificationCompat.Builder( this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setContentTitle("Login Successful")
+                .setContentText("")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        Intent notificationIntent = new Intent( this, MainActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
     }
 }
