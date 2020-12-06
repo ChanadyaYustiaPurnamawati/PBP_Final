@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Customer.DetailCustomerFragment">
+    tools:context=".Customer.DetailUserFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="Detail User"/>
+            android:text="Detail Customer"/>
 
         <ImageButton
             android:id="@+id/ibClose"
@@ -43,17 +43,17 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            app:cardElevation="6dp"
-            app:cardCornerRadius="6dp">
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_margin="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:orientation="vertical">
+                android:layout_margin="20dp"
+                android:orientation="vertical"
+                android:paddingBottom="30dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -63,122 +63,159 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
+                            android:text="Name"
+                            android:textColor="@color/black"
                             android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:text="Nama"
-                            android:textColor="@color/black"/>
+                            android:textStyle="bold" />
+
                         <TextView
-                            android:id="@+id/twNama"
+                            android:id="@+id/twName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
-                            android:hint="Nama"
+                            android:hint="Name"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
+                            android:text="Address"
+                            android:textColor="@color/black"
                             android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:text="NIM"
-                            android:textColor="@color/black"/>
+                            android:textStyle="bold" />
+
                         <TextView
-                            android:id="@+id/twNim"
+                            android:id="@+id/twAddress"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
-                            android:hint="NIM"
+                            android:hint="Address"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
+                            android:text="Phone Number"
+                            android:textColor="@color/black"
                             android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:text="Fakultas"
-                            android:textColor="@color/black"/>
+                            android:textStyle="bold" />
+
                         <TextView
-                            android:id="@+id/twFakultas"
+                            android:id="@+id/twPhoneNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
-                            android:hint="Fakultas"
+                            android:hint="Phone"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
+                            android:text="Cit.Number"
+                            android:textColor="@color/black"
                             android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:text="Prodi"
-                            android:textColor="@color/black"/>
+                            android:textStyle="bold" />
+
                         <TextView
-                            android:id="@+id/twProdi"
+                            android:id="@+id/twCitizenNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
-                            android:hint="Prodi"
+                            android:hint="Cit.Number"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
+                            android:text="Motorcycle"
+                            android:textColor="@color/black"
                             android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:text="Jenis Kelamin"
-                            android:textColor="@color/black"/>
+                            android:textStyle="bold" />
+
                         <TextView
-                            android:id="@+id/twJenisKelamin"
+                            android:id="@+id/twMotorcycle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
-                            android:hint="Jenis Kelamin"
+                            android:hint="Motorcycle"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Day"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/twDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="-1dp"
+                            android:hint="Day"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="20dp" />
+                    </RelativeLayout>
+
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -196,19 +233,21 @@
                 android:id="@+id/btnDelete"
                 android:text="@string/delete"
                 android:textColor="@color/black"
+                android:background="@drawable/profile_box_style3"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginBottom="10dp"
-                app:backgroundTint="@color/white"/>
+                app:backgroundTint="@color/red" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnEdit"
                 android:text="@string/edit"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:background="@drawable/profile_box_style4"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginBottom="10dp"
-                app:backgroundTint="@color/white"/>
+                app:backgroundTint="@color/blue"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -73,4 +73,7 @@
     <!-- MAPBOX -->
     <string name="mapbox_access_token">pk.eyJ1IjoiY2hhbmFkeWEiLCJhIjoiY2tmbnI3ODh0MDdqZzJybzB3M2o1N2M1YiJ9.VYfIJUREJy5JsB6EpR1AqA</string>
 
+    <!-- Customer -->
+    <string name="show_list_user">Customer</string>
+
 </resources>

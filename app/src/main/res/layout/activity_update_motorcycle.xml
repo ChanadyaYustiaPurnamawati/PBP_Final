@@ -177,6 +177,7 @@
         android:layout_marginLeft="10dp"
         android:text="@string/cancel"
         android:textColor="@color/white"
+        app:backgroundTint="@color/green"
         />
 
     <Button
@@ -188,6 +189,7 @@
         android:layout_marginLeft="145dp"
         android:text="@string/edit"
         android:textColor="@color/white"
+        app:backgroundTint="@color/blue"
         />
 
     <Button
@@ -199,5 +201,6 @@
         android:layout_marginLeft="280dp"
         android:text="@string/delete"
         android:textColor="@color/white"
+        app:backgroundTint="@color/red"
         />
 </RelativeLayout>
