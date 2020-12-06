@@ -89,36 +89,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            String CHANNEL_ID = "Channel 1";
-            CharSequence name = "Channel 1";
-            String description = "This is Channel 1";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
-            channel.setDescription(description);
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-
-        FirebaseMessaging.getInstance().subscribeToTopic("news")
-                .addOnCompleteListener(new OnCompleteListener<Void>(){
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task){
-                        String mag = "Welcome!!";
-                        if(!task.isSuccessful()){
-                            mag = "Failed";
-                        }
-                        Toast.makeText(LoginActivity.this, mag, Toast.LENGTH_SHORT).show();
-                    }
-                });
-
 
     }
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "Channel 2";
-            String description = "This Channel 2";
+            CharSequence name = "Channel 1";
+            String description = "This Channel 1";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);

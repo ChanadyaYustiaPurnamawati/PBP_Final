@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
+
     <ImageView
         android:id="@+id/profileImage"
         android:layout_width="150dp"
@@ -15,6 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+    <ImageView
+        android:id="@+id/cameraButton"
+        android:src="@drawable/ic_baseline_photo_camera_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="160dp"
+        />
 
 
     <ImageView
@@ -28,14 +41,14 @@
         app:layout_constraintVertical_bias="0.050000012"
         app:srcCompat="@drawable/ic_baseline_assignment_ind_24" />
 
-    <TextView
-        android:id="@+id/profileName"
+    <EditText
+        android:id="@+id/etProfileName"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="Your Name"
+        android:hint="Your Name"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,13 +73,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileName"
+        app:layout_constraintTop_toBottomOf="@+id/etProfileName"
         app:srcCompat="@drawable/ic_email2" />
 
-    <TextView
-        android:id="@+id/profileEmail"
+    <EditText
+        android:id="@+id/etProfileEmail"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -95,13 +108,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etProfileEmail"
         app:srcCompat="@drawable/ic_baseline_call_24" />
 
-    <TextView
-        android:id="@+id/profilePhone"
+    <EditText
+        android:id="@+id/etProfilePhone"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Phone Number"
@@ -129,13 +142,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePhone"
+        app:layout_constraintTop_toBottomOf="@+id/etProfilePhone"
         app:srcCompat="@drawable/ic_baseline_call_24" />
 
-    <TextView
-        android:id="@+id/profileCitizen"
+    <EditText
+        android:id="@+id/etProfileCitizen"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Citizen Number"
@@ -197,7 +210,7 @@
         android:background="@drawable/round_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileCitizen" />
+        app:layout_constraintTop_toBottomOf="@+id/etProfileCitizen" />
 
 
 

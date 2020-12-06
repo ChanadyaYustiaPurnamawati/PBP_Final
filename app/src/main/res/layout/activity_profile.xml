@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/ic_baseline_assignment_ind_24" />
 
     <TextView
-        android:id="@+id/profileName"
+        android:id="@+id/etProfileName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -60,11 +60,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileName"
+        app:layout_constraintTop_toBottomOf="@+id/etProfileName"
         app:srcCompat="@drawable/ic_email2" />
 
     <TextView
-        android:id="@+id/profileEmail"
+        android:id="@+id/etProfileEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -95,11 +95,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etProfileEmail"
         app:srcCompat="@drawable/ic_baseline_call_24" />
 
     <TextView
-        android:id="@+id/profilePhone"
+        android:id="@+id/etProfilePhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -129,11 +129,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePhone"
+        app:layout_constraintTop_toBottomOf="@+id/etProfilePhone"
         app:srcCompat="@drawable/ic_baseline_call_24" />
 
     <TextView
-        android:id="@+id/profileCitizen"
+        android:id="@+id/etProfileCitizen"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -197,7 +197,7 @@
         android:background="@drawable/round_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileCitizen" />
+        app:layout_constraintTop_toBottomOf="@+id/etProfileCitizen" />
 
 
 
