@@ -21,10 +21,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapter.RoomViewHolder> implements Filterable {
-    private List<UserDAO> dataList;
-    private List<UserDAO> filteredDataList;
+    private List<userDAOCustomer> dataList;
+    private List<userDAOCustomer> filteredDataList;
     private Context context;
-    public UserRecyclerAdapter( Context context,List<UserDAO> dataList) {
+    public UserRecyclerAdapter( Context context,List<userDAOCustomer> dataList) {
         this.dataList = dataList;
         this.filteredDataList = dataList;
         this.context = context;
@@ -40,10 +40,10 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
                 if(charSequenceString.isEmpty()) {
                     filteredDataList = dataList;
                 } else {
-                    List<UserDAO> filteredList = new ArrayList<>();
-                    for (UserDAO UserDAO : dataList) {
-                        if(UserDAO.getNama().toLowerCase().contains(charSequenceString.toLowerCase())) {
-                            filteredList.add(UserDAO);
+                    List<userDAOCustomer> filteredList = new ArrayList<>();
+                    for (userDAOCustomer userDAOCustomer : dataList) {
+                        if(userDAOCustomer.getNama().toLowerCase().contains(charSequenceString.toLowerCase())) {
+                            filteredList.add(userDAOCustomer);
                         }
                         filteredDataList = filteredList;
                     }
@@ -54,7 +54,7 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
             }
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                filteredDataList = (List<UserDAO>) results.values;
+                filteredDataList = (List<userDAOCustomer>) results.values;
                 notifyDataSetChanged();
             }
         };
@@ -68,7 +68,7 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
     }
     @Override
     public void onBindViewHolder(@NonNull UserRecyclerAdapter.RoomViewHolder holder, int position) {
-        final UserDAO brg = filteredDataList.get(position);
+        final userDAOCustomer brg = filteredDataList.get(position);
         holder.twNama.setText(brg.getNama());
        // holder.twNim.setText(brg.getNim());
         holder.mParent.setOnClickListener(new View.OnClickListener() {

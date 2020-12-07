@@ -22,7 +22,7 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SignOutActivity" />
-        <activity android:name=".EditProfilActivity" />
+        <activity android:name=".EditProfile" />
         <activity android:name=".ActivityCompany" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".EditCompanyActivity" />

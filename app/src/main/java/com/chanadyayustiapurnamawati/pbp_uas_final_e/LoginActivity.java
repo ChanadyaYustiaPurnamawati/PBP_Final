@@ -65,16 +65,21 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        boolean emailVerified = user.isEmailVerified();
-                        if(user != null && emailVerified == true){
-                            if(task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this, "Logged in Successfully!", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        if(user!=null){
+                            boolean emailVerified = user.isEmailVerified();
+                            if(user != null && emailVerified == true){
+                                if(task.isSuccessful()){
+                                    Toast.makeText(LoginActivity.this, "Logged in Successfully!", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                                }else{
+                                    Toast.makeText(LoginActivity.this, "Login Error!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                }
                             }else{
-                                Toast.makeText(LoginActivity.this, "Login Error!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(com.chanadyayustiapurnamawati.pbp_uas_final_e.LoginActivity.this, "Email wasn't verified!", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                             }
                         }else{
-                            Toast.makeText(com.chanadyayustiapurnamawati.pbp_uas_final_e.LoginActivity.this, "Email wasn't verified!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(com.chanadyayustiapurnamawati.pbp_uas_final_e.LoginActivity.this, "Username or password invalid",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                         }
                     }

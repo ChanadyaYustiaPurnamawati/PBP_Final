@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView;
 
 import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.CreateUserActivity;
 import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.DetailUserFragment;
+import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.ShowListUserActivity;
 import com.chanadyayustiapurnamawati.pbp_uas_final_e.Motor.ReadMotorFragment;
 
 
@@ -35,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
         customer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CreateUserActivity.class));
+                startActivity(new Intent(getApplicationContext(), ShowListUserActivity.class));
             }
         });
 

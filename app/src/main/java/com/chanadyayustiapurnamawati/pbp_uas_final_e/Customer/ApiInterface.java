@@ -37,5 +37,5 @@ public interface ApiInterface {
                                   @Field("no_telp") String no_telp,
                                   @Field("no_ktp") String no_ktp,
                                   @Field("motor") String motor,
-                                  @Field("waktu") String waktu);
+                                  @Field("waktu") int waktu);
 }

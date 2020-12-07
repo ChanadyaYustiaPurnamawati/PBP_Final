@@ -6,7 +6,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.storage.StorageReference;
 
 public class ActivityCompany extends AppCompatActivity {
     public static final int CAMERA_PERM_CODE = 101;
@@ -15,7 +14,6 @@ public class ActivityCompany extends AppCompatActivity {
     ImageView selectedImage;
     Button cameraBtn,galleryBtn;
     String currentPhotoPath;
-    StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

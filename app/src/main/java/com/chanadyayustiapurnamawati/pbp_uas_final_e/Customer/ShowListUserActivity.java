@@ -25,7 +25,7 @@ public class ShowListUserActivity extends AppCompatActivity {
     private ImageButton ibBack;
     private RecyclerView recyclerView;
     private UserRecyclerAdapter recyclerAdapter;
-    private List<UserDAO> user = new ArrayList<>();
+    private List<userDAOCustomer> user = new ArrayList<>();
     private SearchView searchView;
     private SwipeRefreshLayout swipeRefresh;
     @Override
@@ -66,7 +66,7 @@ public class ShowListUserActivity extends AppCompatActivity {
             }
         });
     }
-    private void generateDataList(List<UserDAO> customerList) {
+    private void generateDataList(List<userDAOCustomer> customerList) {
         recyclerView = findViewById(R.id.userRecyclerView);
         recyclerAdapter = new UserRecyclerAdapter(this,customerList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ShowListUserActivity.this);

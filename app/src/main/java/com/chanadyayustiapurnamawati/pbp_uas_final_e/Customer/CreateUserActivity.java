@@ -58,37 +58,37 @@ public class CreateUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-//                if(name.getText().toString().isEmpty())
-//                {
-//                    name.setError("Isikan dengan benar");
-//                    name.requestFocus();
-//                }
-//                else if(address.getText().toString().isEmpty())
-//                {
-//                    address.setError("Isikan dengan benar");
-//                    address.requestFocus();
-//                }else if(phone_number.getText().toString().isEmpty())
-//                {
-//                    phone_number.setError("Isikan dengan benar");
-//                    phone_number.requestFocus();
-//                }else if(cit_number.getText().toString().isEmpty())
-//                {
-//                    cit_number.setError("Isikan dengan benar");
-//                    cit_number.requestFocus();
-//                }else if(motorcycle.getText().toString().isEmpty())
-//                {
-//                    motorcycle.setError("Isikan dengan benar");
-//                    motorcycle.requestFocus();
-//                }else if(day.getText().toString().isEmpty())
-//                {
-//                    day.setError("Isikan dengan benar");
-//                    day.requestFocus();
-//                }
-//                else
-//                {
-//                    progressDialog.show();
-//                    saveUser();
-//                }
+                if(name.getText().toString().isEmpty())
+                {
+                    name.setError("Isikan dengan benar");
+                    name.requestFocus();
+                }
+                else if(address.getText().toString().isEmpty())
+                {
+                    address.setError("Isikan dengan benar");
+                    address.requestFocus();
+                }else if(phone_number.getText().toString().isEmpty())
+                {
+                    phone_number.setError("Isikan dengan benar");
+                    phone_number.requestFocus();
+                }else if(cit_number.getText().toString().isEmpty())
+                {
+                    cit_number.setError("Isikan dengan benar");
+                    cit_number.requestFocus();
+                }else if(motorcycle.getText().toString().isEmpty())
+                {
+                    motorcycle.setError("Isikan dengan benar");
+                    motorcycle.requestFocus();
+                }else if(day.getText().toString().isEmpty())
+                {
+                    day.setError("Isikan dengan benar");
+                    day.requestFocus();
+                }
+                else
+                {
+                    progressDialog.show();
+                    saveUser();
+                }
 
                 startActivity(new Intent(getApplicationContext(),ShowListUserActivity.class));
 
@@ -102,13 +102,13 @@ public class CreateUserActivity extends AppCompatActivity {
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
         Call<UserResponse> add = apiService.createUser(name.getText().toString(),
                 address.getText().toString(), phone_number.getText().toString(), cit_number.getText().toString(), motorcycle.getText().toString(),
-                day.getText().toString());
+                Integer.parseInt(day.getText().toString()));
 
         add.enqueue(new Callback<UserResponse>() {
             //            menerima balasan dari server jika method yang kita panggil sudah benar
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                Toast.makeText(CreateUserActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(CreateUserActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
                 onBackPressed();
             }

@@ -2,8 +2,7 @@ package com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UserDAO {
-
+public class userDAOCustomer {
     @SerializedName("id")
     private String id;
 
@@ -24,8 +23,7 @@ public class UserDAO {
 
     @SerializedName("waktu")
     private int waktu;
-
-    public UserDAO(String id, String nama, String alamat, String no_telp, String no_ktp, String motor, int waktu) {
+    public userDAOCustomer(String id, String nama, String alamat, String no_telp, String no_ktp, String motor, int waktu) {
         this.id = id;
         this.nama = nama;
         this.alamat = alamat;

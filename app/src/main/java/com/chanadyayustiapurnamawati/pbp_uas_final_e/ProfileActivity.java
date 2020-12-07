@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -51,6 +52,8 @@ public class ProfileActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         store = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+        id = auth.getCurrentUser().getUid();
+        user = auth.getCurrentUser();
 
         StorageReference profileRef = storageReference.child("users/"+auth.getCurrentUser().getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -58,14 +61,14 @@ public class ProfileActivity extends AppCompatActivity {
             public void onSuccess(Uri uri) {
                 Picasso.get().load(uri).into(imgP);
             }
+
         });
 
-        id = auth.getCurrentUser().getUid();
-        user = auth.getCurrentUser();
 
 
-        DocumentReference documentReference = store.collection("users").document(id);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+
+        final DocumentReference documentReference = store.collection("users").document(id);
+        documentReference.addSnapshotListener(ProfileActivity.this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 if(documentSnapshot.exists()){
@@ -82,7 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
         changeP.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),EditProfilActivity.class));
+                startActivity(new Intent(getApplicationContext(), EditProfile.class));
             }
         });
 

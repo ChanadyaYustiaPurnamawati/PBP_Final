@@ -92,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             });
 
-                            Toast.makeText(RegisterActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
+
                             id = auth.getCurrentUser().getUid();
                             DocumentReference documentReference = store.collection("users").document(id);
                             Map<String,Object> user = new HashMap<>();
@@ -104,6 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d(TAG, "onSuccess: user Profile is created for "+ id);
+                                    Toast.makeText(RegisterActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -116,6 +117,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                         }
+
                     }
                 });
             }

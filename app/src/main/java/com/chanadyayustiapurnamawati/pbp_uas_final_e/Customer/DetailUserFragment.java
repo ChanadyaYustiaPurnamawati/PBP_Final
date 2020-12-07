@@ -64,7 +64,7 @@ public class DetailUserFragment extends DialogFragment {
             }
         });
 
-        twName = v.findViewById(R.id.twDay);
+        twName = v.findViewById(R.id.twName);
         twAddress = v.findViewById(R.id.twAddress);
         twPhoneNumber = v.findViewById(R.id.twPhoneNumber);
         twCitizenNumber = v.findViewById(R.id.twCitizenNumber);
@@ -72,60 +72,19 @@ public class DetailUserFragment extends DialogFragment {
         twDay = v.findViewById(R.id.twDay);
         sIdCustomer = getArguments().getString("id", "");
         btnDelete = v.findViewById(R.id.btnDelete);
-        btnDelete.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                new AlertDialog.Builder(getContext()).setTitle("Konfirmasi").setMessage("Yakin Ingin Menghapus Data Ini?")
-                        .setPositiveButton("Ya", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i)
-                            {
-                                progressDialog.show();
-                                deleteUser();
-                                getActivity().finish();
-                            }
-                        })
-                        .setNegativeButton("Tidak", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i)
-                            {
 
-                            }
-                        }).create().show();
-            }
-        });
 
         btnEdit = v.findViewById(R.id.btnEdit);
-        btnEdit.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                savePreferences();
-                Intent intent = new Intent(getContext(), EditUserActivity.class);
-                setAccount();
-                getActivity().finish();
-                startActivity(intent);
-            }
-        });
-
-        loadCustomerById(sIdCustomer);
+        loadUserById(sIdCustomer);
         return v;
     }
 
-    private void loadCustomerById(String id)
-    {
+    private void loadUserById(String id) {
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<UserResponse> add = apiService.getUserById(id, "data");
-        add.enqueue(new Callback<UserResponse>()
-        {
+        Call<UserResponse> add = apiService.getUserById(id,"data");
+        add.enqueue(new Callback<UserResponse>() {
             @Override
-            public void onResponse(Call<UserResponse> call, Response<UserResponse> response)
-            {
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 sName = response.body().getUsers().get(0).getNama();
                 sAddress = response.body().getUsers().get(0).getAlamat();
                 sPhoneNumber = response.body().getUsers().get(0).getNo_telp();
@@ -138,11 +97,41 @@ public class DetailUserFragment extends DialogFragment {
                 twCitizenNumber.setText(sCitizenNumber);
                 twMotorcycle.setText(sMotorcycle);
                 twDay.setText(sDay);
+
+                btnEdit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getContext(), EditUserActivity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", id);
+                        intent.putExtras(bundle);startActivity(intent);
+                    }
+                });
+                btnDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setMessage("Yakin ingin menghapus data ini?")
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        progressDialog.show();
+                                        deleteUser();
+                                        Intent i = new Intent(getContext(),  ShowListUserActivity.class);
+                                        startActivity(i);
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        // User cancelled the dialog
+                                    }
+                                });
+                        builder.show();
+                    }
+                });
                 progressDialog.dismiss();
             }
             @Override
-            public void onFailure(Call<UserResponse> call, Throwable t)
-            {
+            public void onFailure(Call<UserResponse> call, Throwable t) {
                 Toast.makeText(getContext(), "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
             }
