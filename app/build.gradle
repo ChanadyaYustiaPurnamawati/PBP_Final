@@ -52,6 +52,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:17.1.2'
     implementation 'com.google.firebase:firebase-firestore:22.0.0'
     implementation 'com.google.firebase:firebase-storage:19.2.0'
+    implementation 'com.google.firebase:firebase-database:19.5.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //mapbox
@@ -64,4 +65,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+
+    //LIBRARY SHAPEIMAGE
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
 }

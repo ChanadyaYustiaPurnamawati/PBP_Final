@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.ShowListUserActivity;
@@ -49,8 +50,8 @@ public class EditProfile extends AppCompatActivity {
     private static final int CAMERA_PERM_CODE = 101;
     public static final int CAMERA_REQUEST_CODE = 102;
     public static final int GALLERY_REQUEST_CODE = 1000;
-    EditText etNama, etNotelp, etNoktp, etEmail;
-
+    EditText etNama, etNotelp, etNoktp;
+    TextView tvEmail;
     ImageView profileImageView, cameraButton;
     Button saveBtn;
     FirebaseAuth auth;
@@ -70,7 +71,7 @@ public class EditProfile extends AppCompatActivity {
         cameraButton = findViewById(R.id.cameraButton);
         profileImageView = findViewById(R.id.profileImage);
 
-        etEmail = findViewById(R.id.etProfileEmail);
+
         etNama = findViewById(R.id.etProfileName);
         etNotelp = findViewById(R.id.etProfilePhone);
         etNoktp = findViewById(R.id.etProfileCitizen);
@@ -109,7 +110,6 @@ public class EditProfile extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 if (documentSnapshot.exists()) {
                     etNama.setText(documentSnapshot.getString("name"));
-                    etEmail.setText(documentSnapshot.getString("email"));
                     etNotelp.setText(documentSnapshot.getString("phone"));
                     etNoktp.setText(documentSnapshot.getString("citizen"));
                 } else {
@@ -122,7 +122,7 @@ public class EditProfile extends AppCompatActivity {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etNama.getText().toString().isEmpty() || etEmail.getText().toString().isEmpty() || etNoktp.getText().toString().isEmpty() || etNotelp.getText().toString().isEmpty()) {
+                if (etNama.getText().toString().isEmpty() ||  etNoktp.getText().toString().isEmpty() || etNotelp.getText().toString().isEmpty()) {
                     Toast.makeText(EditProfile.this, "One or Many fields are empty.", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -130,7 +130,7 @@ public class EditProfile extends AppCompatActivity {
                 DocumentReference docRef = store.collection("users").document(user.getUid());
                 Map<String, Object> edited = new HashMap<>();
                 edited.put("name", etNama.getText().toString());
-                edited.put("email", etEmail.getText().toString());
+
                 edited.put("phone", etNotelp.getText().toString());
                 edited.put("citizen", etNoktp.getText().toString());
                 docRef.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
