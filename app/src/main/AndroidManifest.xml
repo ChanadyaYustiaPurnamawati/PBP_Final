@@ -3,21 +3,23 @@
     package="com.chanadyayustiapurnamawati.pbp_uas_final_e">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/rent"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PBP_UAS_Final_E">
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".ProfileActivity" />
@@ -29,8 +31,10 @@
         <activity android:name=".Customer.CreateUserActivity" />
         <activity android:name=".Customer.EditUserActivity" />
         <activity android:name=".Customer.ShowListUserActivity" />
+        <activity android:name=".Customer.HomeCustomer" />
         <activity android:name=".Motor.CreateMotorActivity" />
         <activity android:name=".Motor.ShowListMotorActivity" />
+        <activity android:name=".Motor.HomeMotorcycle" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service android:name=".MessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

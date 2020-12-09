@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.CreateUserActivity;
+import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.HomeCustomer;
 import com.chanadyayustiapurnamawati.pbp_uas_final_e.Motor.CreateMotorActivity;
+import com.chanadyayustiapurnamawati.pbp_uas_final_e.Motor.HomeMotorcycle;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -33,14 +35,14 @@ public class HomeActivity extends AppCompatActivity {
         customer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CreateUserActivity.class));
+                startActivity(new Intent(getApplicationContext(), HomeCustomer.class));
             }
         });
 
         motor.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CreateMotorActivity.class));
+                startActivity(new Intent(getApplicationContext(), HomeMotorcycle.class));
             }
         });
 

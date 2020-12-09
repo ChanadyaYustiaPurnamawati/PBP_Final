@@ -10,6 +10,7 @@
     <string name="hint_noktp">01xxxxxxxxxxxxxxxx</string>
 
     <!--    Customer    -->
+    <string name="customer">Customer</string>
     <string name="C_profil">Profil</string>
     <string name="Hi_input">Hi!</string>
     <string name="Hi_input2">Please Input Your Profil</string>
@@ -33,6 +34,7 @@
 
     <!--    Motorcycle  -->
     <string name="M_add">Add Motorcycle</string>
+    <string name="motorcycle">Motorcycle</string>
     <string name="welcome">Welcome To HokiRental</string>
     <string name="key">Your key to rent a motorcycle</string>
     <string name="Matic">Matic</string>
@@ -75,5 +77,15 @@
 
     <!-- Customer -->
     <string name="show_list_user">Customer</string>
+
+    <!-- PDF -->
+    <string name="filepdf">File PDF</string>
+    <string name="title_activity_home_customer">HomeCustomer</string>
+    <string name="download">Download</string>
+    <string name="filecustomer">File Customer</string>
+    <string name="filemotorcycle">File Motorcycle</string>
+    <string name="downloadd">Are you sure want to download?</string>
+
+    <string name="hello_world">Hello Square World!</string>
 
 </resources>

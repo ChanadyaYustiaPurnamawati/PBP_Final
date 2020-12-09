@@ -67,123 +67,122 @@
             android:background="@drawable/profile_box_style">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nameLayout"
-                android:layout_width="450dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
-                android:ems="10"
-                android:paddingLeft="20dp"
-                android:paddingBottom="5dp">
-
+                android:id="@+id/merkLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="340dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginLeft="25dp"
+                android:hint="@string/Merk"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputMerk"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/image_style"
-                    android:hint="@string/Merk"
-                    android:inputType="text" />
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/crsr"
+                    android:textSize="18sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/addressLayout"
-                android:layout_marginTop="75dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="550dp"
-                android:layout_height="60dp"
-                android:paddingLeft="20dp"
-                android:paddingBottom="5dp"
-                android:layout_marginRight="15dp"
-                android:ems="10"
-                android:layout_gravity="center_vertical">
+                android:id="@+id/jenisLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="340dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="77dp"
+                android:layout_marginLeft="25dp"
+                android:hint="@string/Jenis"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputJenis"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/image_style"
-                    android:hint="@string/Jenis"
-                    android:inputType="text"/>
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/crsr"
+                    android:textSize="18sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/phoneNumberLayout"
-                android:layout_marginTop="130dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="450dp"
-                android:layout_height="60dp"
-                android:paddingLeft="20dp"
-                android:paddingBottom="5dp"
-                android:layout_marginRight="15dp"
-                android:ems="10"
-                android:layout_gravity="top|right">
+                android:id="@+id/kondisiLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="340dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="137dp"
+                android:layout_marginLeft="25dp"
+                android:hint="@string/Kondisi"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputKondisi"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/image_style"
-                    android:inputType="text"/>
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/crsr"
+                    android:textSize="18sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/citizenLayout"
-                android:layout_marginTop="180dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="450dp"
-                android:layout_height="60dp"
-                android:paddingLeft="20dp"
-                android:paddingBottom="5dp"
-                android:layout_marginRight="15dp"
-                android:ems="10"
-                android:layout_gravity="top|right">
+                android:id="@+id/tahunLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="340dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="187dp"
+                android:layout_marginLeft="25dp"
+                android:hint="@string/Tahun"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputTahun"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/image_style"
-                    android:hint="@string/Tahun"
-                    android:inputType="text"/>
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/crsr"
+                    android:textSize="18sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/motorLayout"
-                android:layout_marginTop="230dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="450dp"
-                android:layout_height="60dp"
-                android:paddingLeft="20dp"
-                android:paddingBottom="5dp"
-                android:layout_marginRight="15dp"
-                android:ems="10"
-                android:layout_gravity="top|right"
-                android:hint="@string/Harga">
+                android:id="@+id/hargaLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="340dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="237dp"
+                android:layout_marginLeft="25dp"
+                android:hint="@string/Harga"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputHarga"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/image_style"
-
-                    android:inputType="text"/>
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/crsr"
+                    android:textSize="18sp"/>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fotoLayout"
-                android:layout_marginTop="280dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="450dp"
-                android:layout_height="60dp"
-                android:paddingLeft="20dp"
-                android:paddingBottom="5dp"
-                android:layout_marginRight="15dp"
-                android:ems="10"
-                android:layout_gravity="top|right">
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="340dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="287dp"
+                android:layout_marginLeft="25dp"
+                android:hint="@string/Foto"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputFoto"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/image_style"
-
-                    android:inputType="text"/>
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/crsr"
+                    android:textSize="18sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>

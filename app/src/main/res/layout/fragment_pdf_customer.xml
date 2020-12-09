@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/pdfCustomer"
+    tools:context=".Customer.PdfCustomer">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/action_bar_style"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/ic_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:text="@string/filecustomer"
+                android:textSize="30dp"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_welcome"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/welcome_box_style">
+
+            <TextView
+                android:id="@+id/text_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="12dp"
+                android:gravity=""
+                android:text="@string/welcome"
+                android:textColor="#fff"
+                android:textSize="12pt" />
+
+            <View
+                android:layout_width="312dp"
+                android:layout_height="1dp"
+                android:layout_below="@id/text_welcome"
+                android:layout_marginLeft="12dp"
+                android:background="#fff" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/text_welcome"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="2pt"
+                android:text="@string/key"
+                android:textColor="#fff"
+                android:textSize="8pt" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginTop="180dp"
+        android:background="@color/white"
+        android:outlineAmbientShadowColor="@color/pink"
+        android:outlineSpotShadowColor="@color/pink">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70pt"
+            android:layout_marginLeft="15pt"
+            android:text="@string/downloadd"
+            android:textColor="@color/pink"
+            android:textStyle="italic"
+            android:textSize="25sp"/>
+
+
+        <Button
+            android:id="@+id/btnDownload"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/profile_box_style"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="30dp"
+            app:backgroundTint="@color/pink"
+            android:text="YES"
+            android:textColor="#fff"
+            />
+
+        <Button
+            android:id="@+id/btnDownloadNo"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/profile_box_style"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="187dp"
+            app:backgroundTint="@color/pink"
+            android:text="NO"
+            android:textColor="#fff"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
