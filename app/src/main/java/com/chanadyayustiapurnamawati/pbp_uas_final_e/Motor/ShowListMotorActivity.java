@@ -1,6 +1,7 @@
-package com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer;
+package com.chanadyayustiapurnamawati.pbp_uas_final_e.Motor;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -20,27 +21,28 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ShowListUserActivity extends AppCompatActivity {
+public class ShowListMotorActivity extends AppCompatActivity {
     private ImageButton ibBack;
     private RecyclerView recyclerView;
-    private UserRecyclerAdapter recyclerAdapter;
-    private List<userDAOCustomer> user = new ArrayList<>();
+    private MotorRecyclerAdapter recyclerAdapter;
+    private List<motorDAO> user = new ArrayList<>();
     private SearchView searchView;
     private SwipeRefreshLayout swipeRefresh;
-    private EditUserActivity editUserActivity;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_customer);
+        setContentView(R.layout.activity_list_motorcycle);
         ibBack = findViewById(R.id.ibBack);
-//        this.editUserActivity = new EditUserActivity(this);
-        searchView = findViewById(R.id.searchUser);
-        swipeRefresh = findViewById(R.id.swipeRefresh);
+        ibBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+        searchView = findViewById(R.id.searchMotor);
+        swipeRefresh = findViewById(R.id.swipeRefreshMotor);
         swipeRefresh.setRefreshing(true);
         loadUser();
-
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -49,25 +51,25 @@ public class ShowListUserActivity extends AppCompatActivity {
         });
     }
     public void loadUser() {
-        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<UserResponse> call = apiService.getAllUser("data");
-        call.enqueue(new Callback<UserResponse>() {
+        ApiInterfaceMotor apiService = ApiClient.getClient().create(ApiInterfaceMotor.class);
+        Call<MotorResponse> call = apiService.getAllUser("data");
+        call.enqueue(new Callback<MotorResponse>() {
             @Override
-            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+            public void onResponse(Call<MotorResponse> call, Response<MotorResponse> response) {
                 generateDataList(response.body().getUsers());
                 swipeRefresh.setRefreshing(false);
             }
             @Override
-            public void onFailure(Call<UserResponse> call, Throwable t) {
-                Toast.makeText(ShowListUserActivity.this, "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<MotorResponse> call, Throwable t) {
+                Toast.makeText(ShowListMotorActivity.this, "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
                 swipeRefresh.setRefreshing(false);
             }
         });
     }
-    private void generateDataList(List<userDAOCustomer> customerList) {
-        recyclerView = findViewById(R.id.userRecyclerView);
-        recyclerAdapter = new UserRecyclerAdapter(this,customerList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ShowListUserActivity.this);
+    private void generateDataList(List<motorDAO> motorList) {
+        recyclerView = findViewById(R.id.motorRecyclerView);
+        recyclerAdapter = new MotorRecyclerAdapter(this, motorList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ShowListMotorActivity.this);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(recyclerAdapter);

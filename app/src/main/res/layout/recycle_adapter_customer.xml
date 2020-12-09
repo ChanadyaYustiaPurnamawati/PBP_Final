@@ -29,11 +29,39 @@
                 android:hint="Nama"
                 android:textColor="@color/black"/>
             <TextView
-                android:id="@+id/twNim"
+                android:id="@+id/tvAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
-                android:hint="Nim"
+                android:hint="Alamat"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:hint="No_telp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvCitNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:hint="No_ktp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvMotorcycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:hint="Motor"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:hint="Waktu"
                 android:textColor="@color/black"/>
         </LinearLayout>
     </LinearLayout>

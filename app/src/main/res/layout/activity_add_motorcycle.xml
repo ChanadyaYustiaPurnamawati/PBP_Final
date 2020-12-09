@@ -54,13 +54,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="400dp"
         android:layout_marginTop="200dp"
         android:background="@drawable/categories_box_style">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:layout_marginTop="25dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -79,7 +79,7 @@
                 android:paddingBottom="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputName"
+                    android:id="@+id/inputMerk"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/image_style"
@@ -99,7 +99,7 @@
                 android:ems="10"
                 android:layout_gravity="center_vertical">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputAddress"
+                    android:id="@+id/inputJenis"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/image_style"
@@ -119,11 +119,10 @@
                 android:ems="10"
                 android:layout_gravity="top|right">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputPhoneNumber"
+                    android:id="@+id/inputKondisi"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/image_style"
-                    android:hint="@string/Kondisi"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,7 +138,7 @@
                 android:ems="10"
                 android:layout_gravity="top|right">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputCitizen"
+                    android:id="@+id/inputTahun"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/image_style"
@@ -157,13 +156,33 @@
                 android:paddingBottom="5dp"
                 android:layout_marginRight="15dp"
                 android:ems="10"
-                android:layout_gravity="top|right">
+                android:layout_gravity="top|right"
+                android:hint="@string/Harga">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputMotor"
+                    android:id="@+id/inputHarga"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/image_style"
-                    android:hint="@string/Harga"
+
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fotoLayout"
+                android:layout_marginTop="280dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="450dp"
+                android:layout_height="60dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="15dp"
+                android:ems="10"
+                android:layout_gravity="top|right">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputFoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/image_style"
+
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -175,10 +194,10 @@
         android:id="@+id/btnSubmit"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:background="@drawable/profile_box_style"
-        android:layout_marginTop="560dp"
         android:layout_marginLeft="250dp"
+        android:layout_marginTop="620dp"
+        android:background="@drawable/profile_box_style"
         android:text="Submit"
         android:textColor="@color/white"
-        />
+        app:backgroundTint="@color/blue"/>
 </RelativeLayout>

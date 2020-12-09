@@ -3,15 +3,12 @@ package com.chanadyayustiapurnamawati.pbp_uas_final_e;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.CreateUserActivity;
-import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.DetailUserFragment;
-import com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer.ShowListUserActivity;
-import com.chanadyayustiapurnamawati.pbp_uas_final_e.Motor.ReadMotorFragment;
+import com.chanadyayustiapurnamawati.pbp_uas_final_e.Motor.CreateMotorActivity;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -36,14 +33,14 @@ public class HomeActivity extends AppCompatActivity {
         customer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ShowListUserActivity.class));
+                startActivity(new Intent(getApplicationContext(), CreateUserActivity.class));
             }
         });
 
         motor.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ReadMotorFragment.class));
+                startActivity(new Intent(getApplicationContext(), CreateMotorActivity.class));
             }
         });
 

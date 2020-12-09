@@ -29,6 +29,8 @@
         <activity android:name=".Customer.CreateUserActivity" />
         <activity android:name=".Customer.EditUserActivity" />
         <activity android:name=".Customer.ShowListUserActivity" />
+        <activity android:name=".Motor.CreateMotorActivity" />
+        <activity android:name=".Motor.ShowListMotorActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

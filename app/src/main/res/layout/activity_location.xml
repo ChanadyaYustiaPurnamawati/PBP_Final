@@ -24,7 +24,8 @@
         android:background="@color/mapboxGrayLight"
         android:enabled="false"
         android:text="Start navigation"
-        android:textColor="@color/mapboxWhite" />
+        android:textColor="@color/mapboxWhite"
+        app:backgroundTint="@color/pink"/>
 
     <Button
         android:id="@+id/btnBack"

@@ -204,5 +204,6 @@
         android:layout_marginLeft="250dp"
         android:text="Submit"
         android:textColor="#fff"
+        app:backgroundTint="@color/blue"
         />
 </RelativeLayout>

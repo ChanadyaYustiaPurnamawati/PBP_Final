@@ -1,4 +1,4 @@
-package com.chanadyayustiapurnamawati.pbp_uas_final_e.Customer;
+package com.chanadyayustiapurnamawati.pbp_uas_final_e.Motor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,22 +6,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.chanadyayustiapurnamawati.pbp_uas_final_e.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapter.RoomViewHolder> implements Filterable {
-    private List<userDAOCustomer> dataList;
-    private List<userDAOCustomer> filteredDataList;
+public class MotorRecyclerAdapter extends RecyclerView.Adapter<MotorRecyclerAdapter.RoomViewHolder> implements Filterable {
+    private List<motorDAO> dataList;
+    private List<motorDAO> filteredDataList;
     private Context context;
-    public UserRecyclerAdapter( Context context,List<userDAOCustomer> dataList) {
+
+    public MotorRecyclerAdapter( Context context,List<motorDAO> dataList) {
         this.dataList = dataList;
         this.filteredDataList = dataList;
         this.context = context;
@@ -37,10 +40,10 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
                 if(charSequenceString.isEmpty()) {
                     filteredDataList = dataList;
                 } else {
-                    List<userDAOCustomer> filteredList = new ArrayList<>();
-                    for (userDAOCustomer userDAOCustomer : dataList) {
-                        if(userDAOCustomer.getNama().toLowerCase().contains(charSequenceString.toLowerCase())) {
-                            filteredList.add(userDAOCustomer);
+                    List<motorDAO> filteredList = new ArrayList<>();
+                    for (motorDAO motorDAO : dataList) {
+                        if(motorDAO.getMerk().toLowerCase().contains(charSequenceString.toLowerCase())) {
+                            filteredList.add(motorDAO);
                         }
                         filteredDataList = filteredList;
                     }
@@ -51,59 +54,55 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
             }
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                filteredDataList = (List<userDAOCustomer>) results.values;
+                filteredDataList = (List<motorDAO>) results.values;
                 notifyDataSetChanged();
             }
         };
     }
     @NonNull
     @Override
-    public RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MotorRecyclerAdapter.RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.recycle_adapter_customer, parent, false);
-        return new RoomViewHolder(view);
+        View view = layoutInflater.inflate(R.layout.recycler_adapter_motorcycle, parent, false);
+        return new MotorRecyclerAdapter.RoomViewHolder(view);
     }
+
+
+
     @Override
-    public void onBindViewHolder(@NonNull UserRecyclerAdapter.RoomViewHolder holder, int position) {
-        final userDAOCustomer brg = filteredDataList.get(position);
-        holder.twNama.setText(brg.getNama());
-//        holder.twAddress.setText(brg.getAlamat());
-//        holder.twPhone.setText(brg.getNo_telp());
-//        holder.twCit.setText(brg.getNo_ktp());
-//        holder.twMotor.setText(brg.getMotor());
-//        holder.twDay.setText(brg.getWaktu());
-       // holder.twNim.setText(brg.getNim());
-        holder.mParent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    public void onBindViewHolder(@NonNull MotorRecyclerAdapter.RoomViewHolder holder, int position) {
+        final motorDAO brg = filteredDataList.get(position);
+        holder.tvMerk.setText(brg.getMerk());
+        // holder.twNim.setText(brg.getNim());
+        Glide.with(holder.foto.getContext())
+                .load(brg.getFoto())
+                .into(holder.foto);
+//        holder.mParent.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
 //                FragmentManager manager = ((AppCompatActivity) context).getSupportFragmentManager();
 //                DetailUserFragment dialog = new DetailUserFragment();
 //                dialog.show(manager, "dialog");
 //                Bundle args = new Bundle();
 //                args.putString("id", brg.getId());
 //                dialog.setArguments(args);
-            }
-        });
+//            }
+//        });
     }
     @Override
     public int getItemCount() {
         return filteredDataList.size();
     }
     public class RoomViewHolder extends RecyclerView.ViewHolder{
-        private TextView twNama, twAddress, twPhone, twCit, twMotor, twDay;
+        private TextView tvMerk, twNim;
+        private ImageView foto;
         private LinearLayout mParent;
         public RoomViewHolder(@NonNull View itemView) {
             super(itemView);
-            twNama = itemView.findViewById(R.id.tvNama);
-            twAddress = itemView.findViewById(R.id.tvAddress);
-            twPhone = itemView.findViewById(R.id.tvPhoneNumber);
-            twCit = itemView.findViewById(R.id.tvCitNumber);
-            twMotor = itemView.findViewById(R.id.tvMotorcycle);
-            twDay = itemView.findViewById(R.id.tvDay);
-
-          //  twNim = itemView.findViewById(R.id.twNim);
+            tvMerk = itemView.findViewById(R.id.tvMerk);
+            foto = itemView.findViewById(R.id.image_view);
+            //  twNim = itemView.findViewById(R.id.twNim);
             mParent = itemView.findViewById(R.id.linearLayout);
         }
     }
-
 }
