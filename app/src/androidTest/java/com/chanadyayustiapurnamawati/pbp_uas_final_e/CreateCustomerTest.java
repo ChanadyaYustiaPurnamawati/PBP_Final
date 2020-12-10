@@ -245,16 +245,16 @@ public class CreateCustomerTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        ViewInteraction cardView2 = onView(
-                allOf(withId(R.id.logout),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.dashboard),
-                                        0),
-                                5),
-                        isDisplayed()));
-        cardView2.perform(click());
+//
+//        ViewInteraction cardView2 = onView(
+//                allOf(withId(R.id.logout),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(R.id.dashboard),
+//                                        0),
+//                                5),
+//                        isDisplayed()));
+//        cardView2.perform(click());
     }
 
     private static Matcher<View> childAtPosition(
