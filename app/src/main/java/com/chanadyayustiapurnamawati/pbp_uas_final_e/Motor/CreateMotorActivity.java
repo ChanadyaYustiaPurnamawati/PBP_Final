@@ -49,7 +49,7 @@ public class CreateMotorActivity extends AppCompatActivity {
         jenis = findViewById(R.id.inputJenis);
         harga = findViewById(R.id.inputHarga);
         tahun = findViewById(R.id.inputTahun);
-        foto = findViewById(R.id.inputFoto);
+//        foto = findViewById(R.id.inputFoto);
         btnSubmit = findViewById(R.id.btnSubmit);
         //btnUnggah = findViewById(R.id.btnGaleri);
         //imageView = findViewById(R.id.imageView4);
